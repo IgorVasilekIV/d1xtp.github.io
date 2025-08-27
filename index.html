@@ -3,18 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="D1XTP's personal website - Gamer and Developer">
+    <meta name="keywords" content="D1XTP, gaming, development, portfolio">
+    <meta name="author" content="D1XTP">
+    <meta name="theme-color" content="#000000">
     <title>BIO | D1XTP</title>
+    <link rel="icon" type="image/jpeg" href="images/avatar.jpg">
+    <link rel="stylesheet" href="css/styles.css">
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
             padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            background: url('images/banner.png') no-repeat center center fixed;
+            height: 100vh;
+            background: url('images/banner.png') no-repeat center center;
             background-size: cover;
+            background-attachment: fixed;
         }
         .bio-container {
             background-color: rgba(0, 0, 0, 0.212);
@@ -43,38 +54,48 @@
         p {
             margin: 10px 0;
         }
+        .game-list {
+            margin: 0;
+            padding-left: 20px;
+            padding-right: 10px;
+            list-style-type: disc;
+        }
+        .game-list li {
+            margin-bottom: 5px;
+        }
         .buttons {
             display: flex;
             justify-content: space-around;
             margin-top: 20px;
         }
         .button {
-            background-color: #7289da;
+            background-color: rgba(51, 51, 51, 0.411);
             color: white;
-            padding: 10px 20px;
+            padding: 10px 15px;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            font-size: 0; /* Скрываем текст */
+            width: 35px;
+            height: 35px;
+            font-size: 100;
         }
         .button:hover {
-            background-color: #5a6eb8;
+            background-color: rgba(100, 100, 100, 0.6);
         }
-        .telegram { background-color: #0088cc; }
-        .telegram:hover { background-color: #006699; }
-        .steam { background-color: #171a21; }
-        .steam:hover { background-color: #0e1013; }
-        .github { background-color: #333; }
-        .github:hover { background-color: #222; }
+        .telegram { background-color: rgba(51, 51, 51, 0.411); }
+        .telegram:hover { background-color: rgba(0, 136, 204, 0.6); }
+        .steam { background-color: rgba(51, 51, 51, 0.411); }
+        .steam:hover { background-color: rgba(0, 102, 153, 0.6); }
+        .github { background-color: rgba(51, 51, 51, 0.411); }
+        .github:hover { background-color: rgba(150, 150, 150, 0.6); }
+        .discord:hover { background-color: rgba(114, 137, 218, 0.6); }
         .button::before {
             content: '';
-            width: 24px;
-            height: 24px;
+            width: 27px;
+            height: 27px;
             background-size: contain;
             background-repeat: no-repeat;
             display: inline-block;
@@ -83,10 +104,136 @@
         .button.telegram::before { background-image: url('images/telegram.svg'); }
         .button.steam::before { background-image: url('images/steam.svg'); }
         .button.github::before { background-image: url('images/github.svg'); }
+
+        /* Медиа-запрос для планшетов */
+        @media screen and (max-width: 768px) {
+            .bio-container {
+                max-width: 90%;
+                backdrop-filter: blur(10px);
+            }
+            .button {
+                transform: scale(1.1);
+                margin: 0 10px;
+            }
+        }
+
+        /* Медиа-запрос для мобильных устройств */
+        @media screen and (max-width: 600px) {
+            body {
+                background-image: url('images/banner-mobile.png');
+                background-size: cover;
+                background-position: center;
+                background-attachment: scroll;
+                padding: 10px;
+            }
+            
+            .bio-container {
+                max-width: 100%;
+                padding: 20px;
+                flex-direction: column;
+                align-items: center;
+                background-color: rgba(0, 0, 0, 0.4);
+                backdrop-filter: blur(8px);
+            }
+            
+            .avatar {
+                width: 120px;
+                height: 120px;
+                margin-right: 0;
+                margin-bottom: 20px;
+                border: 3px solid rgba(255, 255, 255, 0.1);
+                transition: transform 0.3s ease;
+            }
+            
+            .avatar:active {
+                transform: scale(0.95);
+            }
+            
+            .bio-text {
+                text-align: center;
+                width: 100%;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 15px;
+            }
+            
+            p {
+                font-size: 1.1em;
+                line-height: 1.4;
+            }
+            
+            .game-list {
+                margin: 15px 0;
+            }
+            
+            .game-list li {
+                margin-bottom: 10px;
+                font-size: 1.1em;
+            }
+            
+            .buttons {
+                flex-wrap: wrap;
+                gap: 15px;
+                justify-content: center;
+            }
+            
+            .button {
+                width: 45px;
+                height: 45px;
+                margin: 5px;
+                background-color: rgba(51, 51, 51, 0.6);
+            }
+            
+            .button:active {
+                transform: scale(0.9);
+                background-color: rgba(150, 150, 150, 0.7);
+            }
+            
+            .telegram:active { background-color: rgba(0, 136, 204, 0.8); }
+            .steam:active { background-color: rgba(0, 102, 153, 0.8); }
+            .github:active { background-color: rgba(200, 200, 200, 0.8); }
+            .discord:active { background-color: rgba(114, 137, 218, 0.8); }
+        }
+
+        /* Медиа-запрос для маленьких мобильных устройств */
+        @media screen and (max-width: 320px) {
+            .bio-container {
+                padding: 15px;
+            }
+            
+            .avatar {
+                width: 100px;
+                height: 100px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+            
+            p, .game-list li {
+                font-size: 1em;
+            }
+            
+            .button {
+                width: 40px;
+                height: 40px;
+            }
+        }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.bio-container').style.opacity = '0';
+            setTimeout(() => {
+                document.querySelector('.bio-container').style.opacity = '1';
+                document.querySelector('.bio-container').style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
 </head>
 <body>
-    <div class="bio-container">
+    <div class="bio-container" style="transition: opacity 0.3s ease, transform 0.3s ease; transform: translateY(20px);">
         <div class="avatar"></div>
         <div class="bio-text">
             <h1>BIO | D1XTP</h1>
@@ -95,8 +242,10 @@
             <p>Name: ???</p>
             <p>Age: 1?</p>
             <p>Favorite games:</p>
-            <p>Minecraft — nickname D1XTP</p>
-            <p>DDraceNetwork — nickname катарак</p>
+            <ul class="game-list">
+                <li>Minecraft — nickname D1XTP</li>
+                <li>DDraceNetwork — nickname катарак</li>
+            </ul>
             <p>TimeZone: MSK +3 UTC</p>
             <div class="buttons">
                 <a href="https://discord.com/users/767309831748452373" class="button discord"></a>

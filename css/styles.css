@@ -1,0 +1,159 @@
+:root {
+    --primary-bg: rgba(0, 0, 0, 0.212);
+    --button-bg: rgba(51, 51, 51, 0.411);
+    --button-hover: rgba(100, 100, 100, 0.6);
+    --telegram-hover: rgba(0, 136, 204, 0.6);
+    --steam-hover: rgba(0, 102, 153, 0.6);
+    --github-hover: rgba(150, 150, 150, 0.6);
+    --discord-hover: rgba(114, 137, 218, 0.6);
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-bg: rgba(0, 0, 0, 0.5);
+    }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    background: url('../images/banner.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    body {
+        background: url('../images/banner-mobile.png') no-repeat center center;
+        background-size: cover;
+    }
+}
+
+.bio-container {
+    background-color: var(--primary-bg);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.bio-container:hover {
+    transform: translateY(-5px);
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    background: url('../images/avatar.jpg') no-repeat center;
+    background-size: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.1);
+}
+
+.bio-text {
+    flex-grow: 1;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+    font-size: 1.8em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.game-list {
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 10px;
+    list-style-type: disc;
+}
+
+.game-list li {
+    margin-bottom: 5px;
+    transition: transform 0.2s ease;
+}
+
+.game-list li:hover {
+    transform: translateX(5px);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.button {
+    background-color: var(--button-bg);
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.telegram:hover { background-color: var(--telegram-hover); }
+.steam:hover { background-color: var(--steam-hover); }
+.github:hover { background-color: var(--github-hover); }
+.discord:hover { background-color: var(--discord-hover); }
+
+.button::before {
+    content: '';
+    width: 27px;
+    height: 27px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.button.discord::before { background-image: url('../images/discord.svg'); }
+.button.telegram::before { background-image: url('../images/telegram.svg'); }
+.button.steam::before { background-image: url('../images/steam.svg'); }
+.button.github::before { background-image: url('../images/github.svg'); }
+
+/* Loading animation */
+.loading {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.loaded {
+    opacity: 1;
+}
